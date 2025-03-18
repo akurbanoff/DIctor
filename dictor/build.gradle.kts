@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -33,7 +34,7 @@ android {
 }
 
 dependencies {
-
+    api(libs.javax.inject)
     implementation(libs.appcompat.v7)
     testImplementation(libs.junit)
     androidTestImplementation(libs.runner)
