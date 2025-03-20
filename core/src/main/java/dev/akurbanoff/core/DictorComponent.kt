@@ -1,4 +1,4 @@
-package dev.akurbanoff.dictor
+package dev.akurbanoff.core
 
 class DictorComponent(
     private val modules: List<DictorModule>

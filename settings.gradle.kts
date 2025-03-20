@@ -20,4 +20,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "DIctor"
-include(":dictor")
+//include(":dictor")
+include(":dictor-processor")
+include(":core")

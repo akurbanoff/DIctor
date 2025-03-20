@@ -1,8 +1,7 @@
-package dev.akurbanoff.dictor
+package dev.akurbanoff.core
 
 class FactoryHolderModule: DictorModule {
     private val factories = mutableMapOf<Class<out Any?>, DictorFactory<out Any?>>()
-    val UNINIT = Any()
 
     override operator fun <Type> get(type: Class<Type>): DictorFactory<Type>? {
         return factories[type] as DictorFactory<Type>?
@@ -13,16 +12,6 @@ class FactoryHolderModule: DictorModule {
         factory: DictorFactory<Type>
     ) {
         factories[type] = factory
-    }
-
-    fun <Type> singleton(factory: DictorFactory<Type>): DictorFactory<Type> {
-        var instance: Any? = UNINIT
-        return DictorFactory { linker ->
-            if(instance == UNINIT) {
-                instance = factory.get(linker)
-            }
-            instance as Type
-        }
     }
 }
 

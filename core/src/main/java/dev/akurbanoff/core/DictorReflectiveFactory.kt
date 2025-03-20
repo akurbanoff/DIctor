@@ -1,4 +1,4 @@
-package dev.akurbanoff.dictor
+package dev.akurbanoff.core
 
 import java.lang.reflect.Constructor
 import javax.inject.Inject
