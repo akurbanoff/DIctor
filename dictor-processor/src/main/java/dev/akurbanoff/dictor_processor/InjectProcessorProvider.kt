@@ -47,8 +47,7 @@ class InjectProcessor(
 
             codeGenerator.createNewFile(
                 Dependencies(true, function.containingFile!!), packageName, className
-            ).use { stream ->
-                val ktFile = stream.writer()
+            ).use { ktFile ->
                 ktFile.appendLine("package $packageName")
                 ktFile.appendLine()
                 ktFile.appendLine("import dev.akurbanoff.core.DictorFactory")
@@ -85,7 +84,6 @@ class InjectProcessor(
                     )
                 }
                 ktFile.appendLine("}")
-                ktFile.close()
             }
         }
     }
